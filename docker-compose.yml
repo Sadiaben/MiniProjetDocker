@@ -1,0 +1,27 @@
+version: '3.3'
+services:
+  webapp_student:
+    image: php:apache
+    container_name: webapp_student
+    depends_on:
+      - simple_api
+    ports:
+        - "80:80"
+    volumes:
+        - ./website/:/var/www/html
+    environment:
+        - USERNAME=toto
+        - PASSWORD=python
+    networks:
+      - simple-api.network
+
+  simple_api:
+    image: simple-api
+    container_name: simple-api_student 
+    volumes:
+      - './simple_api/:/data/'
+    networks:
+      - simple-api.network
+
+networks:
+  simple-api.network:
