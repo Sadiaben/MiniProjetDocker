@@ -1,7 +1,7 @@
-<div style="text-align:center;">﻿
-<span style="color:bleu;"> MINI PROJET DOCKER BOOTCAMP 18</span>
-</div>
 
+<p align="center">
+  <strong><span style="color:red;">MINI PROJET DOCKER BOOTCAMP 18</span></strong>
+</p>
 
   ![Mini project](https://github.com/Sadiaben/project2/blob/main/php-dev.png "Mini project").
 
