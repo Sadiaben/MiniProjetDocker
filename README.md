@@ -2,7 +2,8 @@
 <p align="center">
  # MINI PROJET DOCKER BOOTCAMP 18 [color=#26B260]
 </p> 
-Texte normal suivi d’un [color=#26B260]texte coloré en vert[/color] dans un paragraphe.
+<span style="color:blue">some *This is Blue italic.* text</span>
+
   ![Mini project](https://github.com/Sadiaben/project2/blob/main/php-dev.png "Mini project")
 
 Projet student-list
