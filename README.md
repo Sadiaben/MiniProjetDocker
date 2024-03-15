@@ -1,8 +1,7 @@
 
 <p align="center">
- # MINI PROJET DOCKER BOOTCAMP 18 [color=#26B260]
-</p> 
-<span style="color:blue">some *This is Blue italic.* text</span>
+ # MINI PROJET DOCKER BOOTCAMP 18 
+</p>  
 
   ![Mini project](https://github.com/Sadiaben/project2/blob/main/php-dev.png "Mini project")
 
