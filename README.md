@@ -1,11 +1,10 @@
 
 <p align="center">
-  <strong><span style="color:red;">MINI PROJET DOCKER BOOTCAMP 18</span></strong>
+ # `#0969DA`	MINI PROJET DOCKER BOOTCAMP 18
 </p> 
-<p align="center">
 
-  ![Mini project](https://github.com/Sadiaben/project2/blob/main/php-dev.png "Mini project").
-</p>
+  ![Mini project](https://github.com/Sadiaben/project2/blob/main/php-dev.png "Mini project")
+
 Projet student-list
 
 Veuillez trouver la consigne en cliquant [mini-projet-docker-18](https://github.com/diranetafen/student-list)
@@ -32,57 +31,59 @@ L'objectif était de :
 
 **BUILD AND TEST**
 
-– Cloner le projet dans un répertoire /miniprojet-docker
+  – Cloner le projet dans un répertoire /miniprojet-docker
+  
+      1 git clone https://github.com/diranetafen/student-list.git
+  ![](https://github.com/Sadiaben/project2/blob/main/1.png "")
+  
+  
+  1\. Changez de répertoire et créez l'image du conteneur API
+  
+  Voici le contenu de Dockerfile
+  ![](https://github.com/Sadiaben/project2/blob/main/2.png "")
+  
+  2\. build l’image
+  
+      cd /miniprojet-docker/student-list/simple\_api
+      docker build -t simple-api .
+  
+  ![](https://github.com/Sadiaben/project2/blob/main/3.png "")
+  
+  
+  3\. Créez un réseau de type bridge pour que les deux conteneurs puissent se contacter par leurs noms grâce aux fonctions DNS
+  
+      1 docker network create simple-api.network --driver=bridge
+      
+     ![](https://github.com/Sadiaben/project2/blob/main/4.png "").
+  
+  4\. Exécutez le conteneur de l'API backend avec ces arguments
+  
+      1 docker run --rm -d --name=simple-apisim --network=student\_list.network -v ./simple\_api/:/data/ api.student\_list.img
+      
+    ![](https://github.com/Sadiaben/project2/blob/main/5.png "").
+  
+  Mettez à jour le fichier index.php :
+  ![](https://github.com/Sadiaben/project2/blob/main/6.png "")
+  
+  5\. Lancez le conteneur de l'application web :
+  
+      1 docker run --rm -d --name=webapp\_student -p 80:80 --network=simple-api.network -v ./website/:/var/www/html -e USERNAME=toto -e PASSWORD=python php
+  ![](https://github.com/Sadiaben/project2/blob/main/14.png "")
+          
+  
+  6\. Testez l'API via le frontend
+  
+  6\.1 via la ligne de commande :
+  
+      1 docker exec webapp\_student curl -u toto:python -X GET http://simple-api\_student:5000/pozos/api/v1.0/get\_student\_age
+  ![](https://github.com/Sadiaben/project2/blob/main/7.png "")
+  
+  6\.2 via le navigateur web
+  ![](https://github.com/Sadiaben/project2/blob/main/8.png "")
 
-    1 git clone https://github.com/diranetafen/student-list.git
-![](https://github.com/Sadiaben/project2/blob/main/1.png "").
 
-
-1\. Changez de répertoire et créez l'image du conteneur API
-
-Voici le contenu de Dockerfile
-![](https://github.com/Sadiaben/project2/blob/main/2.png "").
-
-2\. build l’image
-
-    cd /miniprojet-docker/student-list/simple\_api
-    docker build -t simple-api .
-
-![](https://github.com/Sadiaben/project2/blob/main/3.png "").
-
-
-3\. Créez un réseau de type bridge pour que les deux conteneurs puissent se contacter par leurs noms grâce aux fonctions DNS
-
-    1 docker network create simple-api.network --driver=bridge
-    
-   ![](https://github.com/Sadiaben/project2/blob/main/4.png "").
-
-4\. Exécutez le conteneur de l'API backend avec ces arguments
-
-    1 docker run --rm -d --name=simple-apisim --network=student\_list.network -v ./simple\_api/:/data/ api.student\_list.img
-    
-  ![](https://github.com/Sadiaben/project2/blob/main/5.png "").
-
-Mettez à jour le fichier index.php :
-![](https://github.com/Sadiaben/project2/blob/main/6.png "").
-
-5\. Lancez le conteneur de l'application web :
-
-    1 docker run --rm -d --name=webapp\_student -p 80:80 --network=simple-api.network -v ./website/:/var/www/html -e USERNAME=toto -e PASSWORD=python php
-![](https://github.com/Sadiaben/project2/blob/main/14.png "").
-        
-
-6\. Testez l'API via le frontend
-
-6\.1 via la ligne de commande :
-
-    1 docker exec webapp\_student curl -u toto:python -X GET http://simple-api\_student:5000/pozos/api/v1.0/get\_student\_age
-![](https://github.com/Sadiaben/project2/blob/main/7.png "").
-
-6\.2 via le navigateur web
-![](https://github.com/Sadiaben/project2/blob/main/8.png "").
-
-. Infrastructure As Code
+  
+**INFRASTRUCTURE AS CODE**
 
 1\. Supprimer tous les conteneurs que nous avons créés
 
@@ -96,9 +97,9 @@ Mettez à jour le fichier index.php :
     
   ![](https://github.com/Sadiaben/project2/blob/main/11.png "")
 
-Registre Docker
+**REGISTER DOCKER**
 
-Pour le registre, j'ai opté pour l'image registry:2, tandis que pour son interface utilisateur frontend, j'ai choisi joxit/docker-registry-ui:static, en passant également plusieurs variables
+- Pour le registre, j'ai opté pour l'image registry:2, tandis que pour son interface utilisateur frontend, j'ai choisi joxit/docker-registry-ui:static, en passant également plusieurs variables
 
 d'environnement
 
@@ -107,11 +108,11 @@ d'environnement
     3  REGISTRY\_TITLE=Pozos
 
 
-lancer le fichier docker-compose.registry.yml
+ lancer le fichier docker-compose.registry.yml
 
     1 docker-compose -f docker-compose.registry.yml up -d
     
-![](https://github.com/Sadiaben/project2/blob/main/12.png "").
+![](https://github.com/Sadiaben/project2/blob/main/12.png "")
 
-![](https://github.com/Sadiaben/project2/blob/main/13.png "").
+![](https://github.com/Sadiaben/project2/blob/main/13.png "")
 
