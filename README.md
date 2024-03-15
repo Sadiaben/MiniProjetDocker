@@ -54,13 +54,13 @@ L'objectif était de :
   
       1 docker network create simple-api.network --driver=bridge
       
-     ![](https://github.com/Sadiaben/project2/blob/main/4.png "").
+  ![](https://github.com/Sadiaben/project2/blob/main/4.png "").
   
   4\. Exécutez le conteneur de l'API backend avec ces arguments
   
       1 docker run --rm -d --name=simple-apisim --network=student\_list.network -v ./simple\_api/:/data/ api.student\_list.img
       
-    ![](https://github.com/Sadiaben/project2/blob/main/5.png "").
+   ![](https://github.com/Sadiaben/project2/blob/main/5.png "").
   
   Mettez à jour le fichier index.php :
   ![](https://github.com/Sadiaben/project2/blob/main/6.png "")
