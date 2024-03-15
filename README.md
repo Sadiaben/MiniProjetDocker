@@ -1,10 +1,10 @@
 
 <p align="center">
   <strong><span style="color:red;">MINI PROJET DOCKER BOOTCAMP 18</span></strong>
-</p>
+
 
   ![Mini project](https://github.com/Sadiaben/project2/blob/main/php-dev.png "Mini project").
-
+</p>
 Projet student-list
 
 Veuillez trouver la consigne en cliquant [mini-projet-docker-18](https://github.com/diranetafen/student-list)
