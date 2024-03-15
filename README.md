@@ -1,8 +1,8 @@
-﻿                                                               MINI PROJET DOCKER BOOTCAMP 1
+﻿                                                               MINI PROJET DOCKER BOOTCAMP 18
 
-                         ![Cover](https://github.com/Sadiaben/project2/blob/main/1.png)
 
-![Texte alternatif](https://github.com/Sadiaben/project2/blob/main/1.png "Mini project").
+![Mini project](https://github.com/Sadiaben/project2/blob/main/php-dev.png "Mini project").
+
 Projet student-list
 
 Veuillez trouver la consigne en cliquant [mini-projet-docker-18](https://github.com/diranetafen/student-list)
@@ -11,7 +11,7 @@ Prénom : Sadia
 
 Nom de famille : Ben touirad
 
-Pour le 18ème Bootcamp DevOps d'Eazytraining
+Formation : 18ème Bootcamp DevOps d'Eazytraining
 
 Période : mars-avril-mai
 
@@ -32,6 +32,7 @@ L'objectif était de :
 – Cloner le projet dans un répertoire /miniprojet-docker
 
 1 
+![](https://github.com/Sadiaben/project2/blob/main/1.png "").
 
 git clone https://github.com/diranetafen/student-list.git
 
