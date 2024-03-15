@@ -1,7 +1,7 @@
-﻿                                                               MINI PROJET DOCKER BOOTCAMP 18
+﻿ MINI PROJET DOCKER BOOTCAMP 18
 
 
-![Mini project](https://github.com/Sadiaben/project2/blob/main/php-dev.png "Mini project").
+  ![Mini project](https://github.com/Sadiaben/project2/blob/main/php-dev.png "Mini project").
 
 Projet student-list
 
@@ -31,26 +31,21 @@ L'objectif était de :
 
 – Cloner le projet dans un répertoire /miniprojet-docker
 
-1 
+    1 git clone https://github.com/diranetafen/student-list.git
 ![](https://github.com/Sadiaben/project2/blob/main/1.png "").
 
-git clone https://github.com/diranetafen/student-list.git
 
 1\. Changez de répertoire et créez l'image du conteneur API
 
 Voici le contenu de Dockerfile
+![](https://github.com/Sadiaben/project2/blob/main/2.png "").
 
 2\. build l’image
 
-1
+    cd /miniprojet-docker/student-list/simple\_api
+    docker build -t simple-api .
 
-2
-
-cd /miniprojet-docker/student-list/simple\_api
-
-docker build -t simple-api .
-
-
+![](https://github.com/Sadiaben/project2/blob/main/3.png "").
 
 <a name="br2"></a> 
 
