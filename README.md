@@ -58,67 +58,58 @@ Voici le contenu de Dockerfile
 
     1 docker run --rm -d --name=simple-apisim --network=student\_list.network -v ./simple\_api/:/data/ api.student\_list.img
     
-  ![](https://github.com/Sadiaben/project2/blob/main/4.png "").
+  ![](https://github.com/Sadiaben/project2/blob/main/5.png "").
 
 Mettez à jour le fichier index.php :
-![](https://github.com/Sadiaben/project2/blob/main/5.png "").
+![](https://github.com/Sadiaben/project2/blob/main/6.png "").
 
 5\. Lancez le conteneur de l'application web :
 
     1 docker run --rm -d --name=webapp\_student -p 80:80 --network=simple-api.network -v ./website/:/var/www/html -e USERNAME=toto -e PASSWORD=python php
-
+![](https://github.com/Sadiaben/project2/blob/main/6.png "").
         
-
-<a name="br3"></a> 
 
 6\. Testez l'API via le frontend
 
 6\.1 via la ligne de commande :
 
-1
-
-docker exec webapp\_student curl -u toto:python -X GET http://simple-api\_student:5000/pozos/api/v1.0/get\_student\_age
+    1 docker exec webapp\_student curl -u toto:python -X GET http://simple-api\_student:5000/pozos/api/v1.0/get\_student\_age
+![](https://github.com/Sadiaben/project2/blob/main/7.png "").
 
 6\.2 via le navigateur web
+![](https://github.com/Sadiaben/project2/blob/main/8.png "").
 
 . Infrastructure As Code
 
 1\. Supprimer tous les conteneurs que nous avons créés
 
+![](https://github.com/Sadiaben/project2/blob/main/9.png "").
 
-
-<a name="br4"></a> 
 
 2\. construire le docker-compose puis exécuter la commande suivante
 
-1
+    1 docker-compose up -d
+  ![](https://github.com/Sadiaben/project2/blob/main/10.png "").
+    
+  ![](https://github.com/Sadiaben/project2/blob/main/11.png "").
 
-docker-compose up -d
-
+  
 Registre Docker
 
 Pour le registre, j'ai opté pour l'image registry:2, tandis que pour son interface utilisateur frontend, j'ai choisi joxit/docker-registry-ui:static, en passant également plusieurs variables
 
 d'environnement
 
-1
+    1 NGINX\_PROXY\_PASS\_URL=http://pozos-registry:5000
+    2 DELETE\_IMAGES=true
+    3  REGISTRY\_TITLE=Pozos
 
-2
-
-3
-
-\- NGINX\_PROXY\_PASS\_URL=http://pozos-registry:5000
-
-\- DELETE\_IMAGES=true
-
-\- REGISTRY\_TITLE=Pozos
 
 lancer le fichier docker-compose.registry.yml
 
-1
+    1 docker-compose -f docker-compose.registry.yml up -d
+    
+![](https://github.com/Sadiaben/project2/blob/main/12.png "").
 
-docker-compose -f docker-compose.registry.yml up -d
+![](https://github.com/Sadiaben/project2/blob/main/13.png "").
 
-
-
-<a name="br5"></a> 
