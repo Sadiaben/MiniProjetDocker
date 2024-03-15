@@ -1,4 +1,6 @@
-﻿                                                                                                             MINI PROJET DOCKER BOOTCAMP 1
+﻿                                                               MINI PROJET DOCKER BOOTCAMP 1
+
+                         ![Cover](https://github.com/Sadiaben/project2/blob/main/1.png)
 Projet student-list
 
 Veuillez trouver la consigne en cliquant [mini-projet-docker-18](https://github.com/diranetafen/student-list)
