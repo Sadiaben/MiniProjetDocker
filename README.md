@@ -1,6 +1,6 @@
 
 <p align="center">
- # MINI PROJET DOCKER BOOTCAMP 18 `#0969DA`	
+ # MINI PROJET DOCKER BOOTCAMP 18 [color=#26B260]
 </p> 
 
   ![Mini project](https://github.com/Sadiaben/project2/blob/main/php-dev.png "Mini project")
