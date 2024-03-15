@@ -66,7 +66,7 @@ Mettez à jour le fichier index.php :
 5\. Lancez le conteneur de l'application web :
 
     1 docker run --rm -d --name=webapp\_student -p 80:80 --network=simple-api.network -v ./website/:/var/www/html -e USERNAME=toto -e PASSWORD=python php
-![](https://github.com/Sadiaben/project2/blob/main/6.png "").
+![](https://github.com/Sadiaben/project2/blob/main/14.png "").
         
 
 6\. Testez l'API via le frontend
@@ -83,17 +83,16 @@ Mettez à jour le fichier index.php :
 
 1\. Supprimer tous les conteneurs que nous avons créés
 
-![](https://github.com/Sadiaben/project2/blob/main/9.png "").
+![](https://github.com/Sadiaben/project2/blob/main/9.png "")
 
 
 2\. construire le docker-compose puis exécuter la commande suivante
 
     1 docker-compose up -d
-  ![](https://github.com/Sadiaben/project2/blob/main/10.png "").
+  ![](https://github.com/Sadiaben/project2/blob/main/10.png "")
     
-  ![](https://github.com/Sadiaben/project2/blob/main/11.png "").
+  ![](https://github.com/Sadiaben/project2/blob/main/11.png "")
 
-  
 Registre Docker
 
 Pour le registre, j'ai opté pour l'image registry:2, tandis que pour son interface utilisateur frontend, j'ai choisi joxit/docker-registry-ui:static, en passant également plusieurs variables
