@@ -44,7 +44,7 @@ L'objectif était de :
   
   2\. build l’image
   
-      cd /miniprojet-docker/student-list/simple\_api
+      cd /miniprojet-docker/student-list/simple_api
       docker build -t simple-api .
   
   ![](https://github.com/Sadiaben/project2/blob/main/3.png "")
@@ -58,8 +58,8 @@ L'objectif était de :
   
   4\. Exécutez le conteneur de l'API backend avec ces arguments
   
-      1 docker run --rm -d --name=simple-apisim --network=student\_list.network -v ./simple\_api/:/data/ api.student\_list.img
-      
+      1 docker run --rm -d --name=simple-api_student --network=simple-api.network -v ./simple_api/:/data/  simple-api
+   
    ![](https://github.com/Sadiaben/project2/blob/main/5.png "").
   
   Mettez à jour le fichier index.php :
@@ -67,7 +67,7 @@ L'objectif était de :
   
   5\. Lancez le conteneur de l'application web :
   
-      1 docker run --rm -d --name=webapp\_student -p 80:80 --network=simple-api.network -v ./website/:/var/www/html -e USERNAME=toto -e PASSWORD=python php
+      1 docker run --rm -d --name=webapp_student -p 80:80 --network=simple-api.network -v ./website/:/var/www/html -e USERNAME=toto -e PASSWORD=python php
   ![](https://github.com/Sadiaben/project2/blob/main/14.png "")
           
   
@@ -75,7 +75,7 @@ L'objectif était de :
   
   6\.1 via la ligne de commande :
   
-      1 docker exec webapp\_student curl -u toto:python -X GET http://simple-api\_student:5000/pozos/api/v1.0/get\_student\_age
+      1 docker exec webapp_student curl -u toto:python -X GET http://simple-api_student:5000/pozos/api/v1.0/get_student_age
   ![](https://github.com/Sadiaben/project2/blob/main/7.png "")
   
   6\.2 via le navigateur web
@@ -103,9 +103,9 @@ L'objectif était de :
 
 d'environnement
 
-    1 NGINX\_PROXY\_PASS\_URL=http://pozos-registry:5000
-    2 DELETE\_IMAGES=true
-    3  REGISTRY\_TITLE=Pozos
+    1 NGINX_PROXY_PASS_URL=http://pozos-registry:5000
+    2 DELETE_IMAGES=true
+    3  REGISTRY_TITLE=Pozos
 
 
  lancer le fichier docker-compose.registry.yml
