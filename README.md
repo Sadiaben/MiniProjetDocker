@@ -47,27 +47,24 @@ Voici le contenu de Dockerfile
 
 ![](https://github.com/Sadiaben/project2/blob/main/3.png "").
 
-<a name="br2"></a> 
 
 3\. Créez un réseau de type bridge pour que les deux conteneurs puissent se contacter par leurs noms grâce aux fonctions DNS
 
-1
-
-docker network create simple-api.network --driver=bridge
+    1 docker network create simple-api.network --driver=bridge
+    
+   ![](https://github.com/Sadiaben/project2/blob/main/4.png "").
 
 4\. Exécutez le conteneur de l'API backend avec ces arguments
 
-1
-
-docker run --rm -d --name=simple-apisim --network=student\_list.network -v ./simple\_api/:/data/ api.student\_list.img
+    1 docker run --rm -d --name=simple-apisim --network=student\_list.network -v ./simple\_api/:/data/ api.student\_list.img
+    ![](https://github.com/Sadiaben/project2/blob/main/4.png "").
 
 Mettez à jour le fichier index.php :
+![](https://github.com/Sadiaben/project2/blob/main/5.png "").
 
 5\. Lancez le conteneur de l'application web :
 
-1
-
-docker run --rm -d --name=webapp\_student -p 80:80 --network=simple-api.network -v ./website/:/var/www/html -e USERNAME=toto -e PASSWORD=python php
+    1 docker run --rm -d --name=webapp\_student -p 80:80 --network=simple-api.network -v ./website/:/var/www/html -e USERNAME=toto -e PASSWORD=python php
 
 
 
