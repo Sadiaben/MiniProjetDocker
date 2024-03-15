@@ -1,6 +1,6 @@
-﻿ MINI PROJET DOCKER BOOTCAMP 18
-
-
+<div style="text-align:center;">﻿
+**<span style="color:bleu;"> MINI PROJET DOCKER BOOTCAMP 18</span>**
+</div>
   ![Mini project](https://github.com/Sadiaben/project2/blob/main/php-dev.png "Mini project").
 
 Projet student-list
